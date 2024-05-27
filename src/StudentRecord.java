@@ -29,4 +29,11 @@ public class StudentRecord{
         return new ArrayList<>(students.values());
 
    }
+   public void updateStudent(String studentID, Student updatedStudent) throws StudentNotFoundException, InvalidStudentDataException{
+          Student update = getstudent(studentID);
+          if( updatedStudent == null||updatedStudent.getName() == null || updatedStudent.getstudentID() == null || updatedStudent.getAge()<=0|| updatedStudent.getMajor() == null ){
+               throw new InvalidStudentDataException("Invalid student data.");
+           }
+         students.put(studentID,updatedStudent);
+   }
 }
