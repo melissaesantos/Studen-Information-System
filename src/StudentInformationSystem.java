@@ -48,7 +48,7 @@ public class StudentInformationSystem {
         return option;
     }
 
-    public boolean executeOption(int option) throws InputMismatchException, InvalidStudentDataException{
+    public boolean executeOption(int option) throws InputMismatchException, InvalidStudentDataException, StudentNotFoundException{
         switch(option){
             case 1: //add student
                 addStudent();
@@ -100,6 +100,8 @@ public class StudentInformationSystem {
             //now remove the student: note it can throw a student not found error
             studentRecord.removeStudent(studenId);
         }catch(InputMismatchException e){
+            System.out.println("Invalid input. Please try again.");
+        }catch(StudentNotFoundException e){
             System.out.println("Error: " + e.getMessage());
         }
         
