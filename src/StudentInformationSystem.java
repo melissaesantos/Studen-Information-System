@@ -8,13 +8,13 @@ public class StudentInformationSystem {
     private StudentRecord studentRecord = new StudentRecord();
     private int choice;
     
-    public static void main(String[] args) throws InputMismatchException, InvalidStudentDataException {
+    public static void main(String[] args) throws InputMismatchException, InvalidStudentDataException, StudentNotFoundException {
         StudentInformationSystem system = new StudentInformationSystem();
         system.run();
 
 
     }
-    public void run() throws InputMismatchException, InvalidStudentDataException{
+    public void run() throws InputMismatchException, InvalidStudentDataException, StudentNotFoundException{
         boolean running = true;
         while(running){
             displayMenu();
@@ -57,7 +57,9 @@ public class StudentInformationSystem {
                 removeStudent();
                 break;
             case 3://view student
+
             case 4:// view all students
+                viewStudent();
             case 5://update student
             case 6://exit
                 System.out.println("Exiting.....");
@@ -104,6 +106,10 @@ public class StudentInformationSystem {
         }catch(StudentNotFoundException e){
             System.out.println("Error: " + e.getMessage());
         }
+        
+    }
+
+    private void viewStudent() throws InputMismatchException,StudentNotFoundException{
         
     }
 
