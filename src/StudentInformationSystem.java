@@ -1,17 +1,20 @@
 import java.util.Scanner;
+
+import javax.sound.midi.SysexMessage;
+
 import java.util.InputMismatchException;
 public class StudentInformationSystem {
     private Scanner scanner = new Scanner(System.in);
     private StudentRecord studentRecord = new StudentRecord();
     private int choice;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InputMismatchException, InvalidStudentDataException {
         StudentInformationSystem system = new StudentInformationSystem();
         system.run();
 
 
     }
-    public void run(){
+    public void run() throws InputMismatchException, InvalidStudentDataException{
         boolean running = true;
         while(running){
             displayMenu();
@@ -45,9 +48,10 @@ public class StudentInformationSystem {
         return option;
     }
 
-    public boolean executeOption(int option){
+    public boolean executeOption(int option) throws InputMismatchException, InvalidStudentDataException{
         switch(option){
             case 1: //add student
+                addStudent();
             case 2://remove student
             case 3://view student
             case 4:// view all students
@@ -58,4 +62,32 @@ public class StudentInformationSystem {
         }
         return true;
     }
+    private void addStudent() throws InvalidStudentDataException,InputMismatchException{
+        try{
+             System.out.println("Enter Student ID: \n");
+             String studenId = scanner.nextLine();//did next line to ensure that it is a string
+             
+             System.out.println("Enter Student name: \n");
+             String name = scanner.nextLine();
+             
+             System.out.println("Enter Student age: \n");
+             int age = scanner.nextInt();//next int ensures it is an integer
+
+             System.out.println("Enter Student Major: \n");
+             String major = scanner.nextLine();//next int ensures it is an integer
+                //create the student
+             Student student = new Student(studenId, name, age, major);
+             //add student to the record
+             studentRecord.addStudent(student);
+             System.out.println("Student added successfuly.");
+
+        }catch(InputMismatchException e){
+            System.out.println("Invalid input. Please try again.");
+            scanner.next();
+        }catch(InvalidStudentDataException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+    }
+
 }
