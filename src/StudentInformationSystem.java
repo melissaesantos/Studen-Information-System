@@ -52,7 +52,10 @@ public class StudentInformationSystem {
         switch(option){
             case 1: //add student
                 addStudent();
+                break;
             case 2://remove student
+                removeStudent();
+                break;
             case 3://view student
             case 4:// view all students
             case 5://update student
@@ -85,6 +88,18 @@ public class StudentInformationSystem {
             System.out.println("Invalid input. Please try again.");
             scanner.next();
         }catch(InvalidStudentDataException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+    }
+    private void removeStudent() throws InputMismatchException,StudentNotFoundException{
+        try{
+            System.out.println("Enter Student ID: \n");
+            String studenId = scanner.nextLine();//did next line to ensure that it is a string
+            
+            //now remove the student: note it can throw a student not found error
+            studentRecord.removeStudent(studenId);
+        }catch(InputMismatchException e){
             System.out.println("Error: " + e.getMessage());
         }
         
