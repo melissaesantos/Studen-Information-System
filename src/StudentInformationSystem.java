@@ -77,17 +77,17 @@ public class StudentInformationSystem {
     private void addStudent() throws InvalidStudentDataException,InputMismatchException{
         try{
              scanner.nextLine();//necessary to consume newline lefto over from nextInt
-             System.out.println("Enter Student ID: \n");
+             System.out.println("Enter Student ID: ");
              String studenId = scanner.nextLine();//did next line to ensure that it is a string
              
-             System.out.println("Enter Student name: \n");
+             System.out.println("Enter Student name: ");
              String name = scanner.nextLine();
              
-             System.out.println("Enter Student age: \n");
+             System.out.println("Enter Student age: ");
              scanner.nextLine();//necessary to consume newline lefto over from nextInt s
              int age = scanner.nextInt();//next int ensures it is an integer
 
-             System.out.println("Enter Student Major: \n");
+             System.out.println("Enter Student Major: ");
              String major = scanner.nextLine();//next int ensures it is an integer
                 //create the student
              Student student = new Student(studenId, name, age, major);
@@ -106,7 +106,7 @@ public class StudentInformationSystem {
     private void removeStudent() throws InputMismatchException,StudentNotFoundException{
         try{
             scanner.nextLine();//necessary to consume newline lefto over from nextInt
-            System.out.println("Enter Student ID: \n");
+            System.out.println("Enter Student ID: ");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
             //now remove the student: note it can throw a student not found error
@@ -122,7 +122,7 @@ public class StudentInformationSystem {
     private void viewStudent() throws InputMismatchException,StudentNotFoundException{
         try{
             scanner.nextLine();//necessary to consume newline lefto over from nextInt
-            System.out.println("Enter Student ID: \n");
+            System.out.println("Enter Student ID: ");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
             //now remove the student: note it can throw a student not found error
@@ -138,7 +138,7 @@ public class StudentInformationSystem {
         try{
 
             scanner.nextLine();//necessary to consume newline lefto over from nextInt
-            System.out.println("Enter Student ID to update: \n");
+            System.out.println("Enter Student ID to update: ");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
             System.out.println(" Enter New student name: ");
