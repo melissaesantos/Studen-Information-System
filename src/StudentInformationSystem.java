@@ -50,6 +50,7 @@ public class StudentInformationSystem {
 
     public boolean executeOption(int option) throws InputMismatchException, InvalidStudentDataException, StudentNotFoundException{
         switch(option){
+        
             case 1: //add student
                 addStudent();
                 break;
@@ -75,6 +76,7 @@ public class StudentInformationSystem {
     }
     private void addStudent() throws InvalidStudentDataException,InputMismatchException{
         try{
+             scanner.nextLine();//necessary to consume newline lefto over from nextInt
              System.out.println("Enter Student ID: \n");
              String studenId = scanner.nextLine();//did next line to ensure that it is a string
              
@@ -82,6 +84,7 @@ public class StudentInformationSystem {
              String name = scanner.nextLine();
              
              System.out.println("Enter Student age: \n");
+             scanner.nextLine();//necessary to consume newline lefto over from nextInt s
              int age = scanner.nextInt();//next int ensures it is an integer
 
              System.out.println("Enter Student Major: \n");
@@ -102,6 +105,7 @@ public class StudentInformationSystem {
     }
     private void removeStudent() throws InputMismatchException,StudentNotFoundException{
         try{
+            scanner.nextLine();//necessary to consume newline lefto over from nextInt
             System.out.println("Enter Student ID: \n");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
@@ -117,6 +121,7 @@ public class StudentInformationSystem {
 
     private void viewStudent() throws InputMismatchException,StudentNotFoundException{
         try{
+            scanner.nextLine();//necessary to consume newline lefto over from nextInt
             System.out.println("Enter Student ID: \n");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
@@ -131,6 +136,8 @@ public class StudentInformationSystem {
 
     private void updateStudent() throws InputMismatchException,StudentNotFoundException, InvalidStudentDataException{
         try{
+
+            scanner.nextLine();//necessary to consume newline lefto over from nextInt
             System.out.println("Enter Student ID to update: \n");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
             
