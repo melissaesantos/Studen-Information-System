@@ -108,7 +108,7 @@ public class StudentInformationSystem {
             scanner.nextLine();//necessary to consume newline lefto over from nextInt
             System.out.println("Enter Student ID: ");
             String studenId = scanner.nextLine();//did next line to ensure that it is a string
-            
+            System.out.println("\n");
             //now remove the student: note it can throw a student not found error
             studentRecord.removeStudent(studenId);
             System.out.println("************Student removed successfuly.************");
