@@ -84,8 +84,8 @@ public class StudentInformationSystem {
              String name = scanner.nextLine();
              
              System.out.println("Enter Student age: ");
-             scanner.nextLine();//necessary to consume newline lefto over from nextInt s
              int age = scanner.nextInt();//next int ensures it is an integer
+             scanner.nextLine();//necessary to consume newline lefto over from nextInt s s
 
              System.out.println("Enter Student Major: ");
              String major = scanner.nextLine();//next int ensures it is an integer
@@ -93,11 +93,11 @@ public class StudentInformationSystem {
              Student student = new Student(studenId, name, age, major);
              //add student to the record
              studentRecord.addStudent(student);
-             System.out.println("Student added successfuly.");
+             System.out.println("************Student added successfuly.************");
 
         }catch(InputMismatchException e){
             System.out.println("Invalid input. Please try again.");
-            scanner.next();
+            scanner.nextLine();
         }catch(InvalidStudentDataException e){
             System.out.println("Error: " + e.getMessage());
         }
@@ -111,6 +111,7 @@ public class StudentInformationSystem {
             
             //now remove the student: note it can throw a student not found error
             studentRecord.removeStudent(studenId);
+            System.out.println("************Student removed successfuly.************");
         }catch(InputMismatchException e){
             System.out.println("Invalid input. Please try again.");
         }catch(StudentNotFoundException e){

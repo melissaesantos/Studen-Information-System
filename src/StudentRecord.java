@@ -26,6 +26,9 @@ public class StudentRecord{
         return students.get(studentID);
    }
    public List<Student> getAllStudents(){
+     if(students.isEmpty()){
+          System.out.println("************ No Students in the record. ************");
+     }
         return new ArrayList<>(students.values());
 
    }
