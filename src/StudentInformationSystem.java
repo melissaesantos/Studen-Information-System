@@ -143,9 +143,12 @@ public class StudentInformationSystem {
             
             System.out.println(" Enter New student name: ");
             String name = scanner.nextLine();
+
+            System.out.println(" Enter New student age: ");
             int age = scanner.nextInt();
             System.out.print("Enter New Student Major: ");
-            String major = scanner.next();
+            scanner.nextLine();//necessary to consume newline lefto over from nextInt
+            String major = scanner.nextLine();
 
             if (age <= 0) {
                 throw new InvalidStudentDataException("Age must be a positive number.");
