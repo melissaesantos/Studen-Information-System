@@ -63,6 +63,7 @@ public class StudentInformationSystem {
                 studentRecord.getAllStudents();
                 
             case 5://update student
+                
             case 6://exit
                 System.out.println("Exiting.....");
                 return false;
@@ -124,5 +125,32 @@ public class StudentInformationSystem {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+    private void updateStudent() throws InputMismatchException,StudentNotFoundException, InvalidStudentDataException{
+        try{
+            System.out.println("Enter Student ID to update: \n");
+            String studenId = scanner.nextLine();//did next line to ensure that it is a string
+            
+            System.out.println(" Enter New student name: ");
+            String name = scanner.nextLine();
+            int age = scanner.nextInt();
+            System.out.print("Enter New Student Major: ");
+            String major = scanner.next();
+
+            if (age <= 0) {
+                throw new InvalidStudentDataException("Age must be a positive number.");
+            }
+
+            Student updatedStudent = new Student(studenId, name, age, major);
+            studentRecord.updateStudent(studenId, updatedStudent);
+           
+            
+        }catch(InputMismatchException  e){
+            System.out.println("Invalid input. Please try again.");
+        }catch(StudentNotFoundException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
 
 }
