@@ -60,6 +60,7 @@ public class StudentInformationSystem {
                 viewStudent();
                 break;
             case 4:// view all students
+                studentRecord.getAllStudents();
                 
             case 5://update student
             case 6://exit
@@ -117,7 +118,7 @@ public class StudentInformationSystem {
             
             //now remove the student: note it can throw a student not found error
             studentRecord.getstudent(studenId);
-        }catch(InputMismatchException   e){
+        }catch(InputMismatchException  e){
             System.out.println("Invalid input. Please try again.");
         }catch(StudentNotFoundException e){
             System.out.println("Error: " + e.getMessage());
