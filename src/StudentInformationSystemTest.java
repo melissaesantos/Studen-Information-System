@@ -1,12 +1,5 @@
-package test;
-import org.junit.Before;
+import org.junit.*;
 import org.junit.Test;
-
-import InvalidStudentDataException;
-import Student;
-import StudentNotFoundException;
-import StudentRecord;
-
 import static org.junit.Assert.*;
 
 
