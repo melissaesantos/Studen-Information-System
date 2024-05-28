@@ -1,11 +1,12 @@
 {
     "folders": [
         {
-            "path": "."
+			"java.project.sourcePaths": ["src"],
+			"java.project.testPaths": ["test"]
         }
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
-        //"java.project.testPaths": ["test"]
+        "java.project.testPaths": ["test"]
     }
 }
