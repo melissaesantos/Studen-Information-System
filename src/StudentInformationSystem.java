@@ -61,8 +61,11 @@ public class StudentInformationSystem {
                 break;
             case 4:// view all students
                 studentRecord.getAllStudents();
+                break;
                 
             case 5://update student
+                updateStudent();
+                break;
                 
             case 6://exit
                 System.out.println("Exiting.....");
