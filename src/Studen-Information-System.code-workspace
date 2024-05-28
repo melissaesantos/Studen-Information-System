@@ -1,12 +1,13 @@
 {
     "folders": [
         {
-			"java.project.sourcePaths": ["src"],
-			//"java.project.testPaths": ["test"]
+            "path": "."
         }
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
-        //"java.project.testPaths": ["test"]
+        "java.project.testPaths": ["test"],
+        "java.project.referencedLibraries": ["lib/**/*.jar"]
     }
 }
+
