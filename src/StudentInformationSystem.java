@@ -1,8 +1,5 @@
-import java.util.Scanner;
-
-import javax.sound.midi.SysexMessage;
-
 import java.util.InputMismatchException;
+import java.util.Scanner;
 public class StudentInformationSystem {
     private Scanner scanner = new Scanner(System.in);
     private StudentRecord studentRecord = new StudentRecord();
